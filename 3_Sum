@@ -1,0 +1,10 @@
+- First Approach
+1. Look at first integer of Arraylist
+2. Figure out distance from 0
+3. find 2 numbers that equal that sum
+4. add group of 3 to a Hashset (does not contain duplicates)
+
+- Second Approach
+1. Create second arraylist
+2. add elements of first array to second 
+3. 
