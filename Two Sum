@@ -1,0 +1,32 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] index = new int[2];
+        int diff;
+        for(int i = 0; i < nums.length; i++){
+            diff = target-nums[i];
+            if(containsNum(nums,diff)){
+                int secondNum = indexOf(nums, diff);
+                index[0] = secondNum;
+                index[1] = i;
+            }
+        }
+        return index;
+    }
+        
+    public boolean containsNum(int[] nums, int target){
+        for(int i: nums){
+            if(i == target)
+                return true;
+        }
+        return false;
+    }
+    
+    public int indexOf(int[] nums, int target){
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] == target)
+                return i;
+        }
+    return -1;    
+    }
+        
+}
