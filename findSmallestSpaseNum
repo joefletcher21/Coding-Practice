@@ -1,0 +1,27 @@
+/*
+We say a number is sparse if there are no adjacent ones in its binary representation. For example, 21 (10101) is sparse, but 22 (10110) is not. For a given input N, find the smallest sparse number greater than or equal to N.
+
+Do this in faster than O(N log N) time.
+*/
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+    System.out.println("Smallest sparse Number: " + findSmallestSpaseNum(22));
+  }
+
+  public static int findSmallestSpaseNum(int num){
+
+    String binaryNum = Integer.toBinaryString(num);
+    int result = num;
+    boolean isSparse = !binaryNum.contains("11");
+    while(isSparse == false){
+      result++;
+      binaryNum = Integer.toBinaryString(result);
+      if(!binaryNum.contains("11"))
+        isSparse = true;
+    }
+    return result;
+  }
+
+}
